@@ -15,20 +15,20 @@ extern int side;
 extern int xside;
 extern int castle;
 extern int ep;
-extern int fifty;
+extern int fifty; // si 50 coups joués
 extern int hash;
-extern int ply;
+extern int ply; // 
 extern int hply;
-extern gen_t gen_dat[GEN_STACK];
+extern gen_t gen_dat[GEN_STACK]; // coup a joué à une profondeur n
 extern int first_move[MAX_PLY];
-extern int history[64][64];
+extern int history[64][64]; // méthode d'élagage
 extern hist_t hist_dat[HIST_STACK];
-extern int max_time;
+extern int max_time; // temps alloué de réflexion
 extern int max_depth;
 extern int start_time;
 extern int stop_time;
 extern int nodes;
-extern move pv[MAX_PLY][MAX_PLY];
+extern move pv[MAX_PLY][MAX_PLY]; // stocke les coups sélectionnés
 extern int pv_length[MAX_PLY];
 extern BOOL follow_pv;
 extern int hash_piece[2][6][64];

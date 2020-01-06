@@ -30,7 +30,7 @@ int piece_value[6] = {
    added to the material value of the piece based on the
    location of the piece. */
 
-int pawn_pcsq[64] = {
+int pawn_pcsq[64] = { // position pièces blanches
 	  0,   0,   0,   0,   0,   0,   0,   0,
 	  5,  10,  15,  20,  20,  15,  10,   5,
 	  4,   8,  12,  16,  16,  12,   8,   4,
@@ -89,7 +89,7 @@ int king_endgame_pcsq[64] = {
    values for DARK pieces. The piece/square value of a
    LIGHT pawn is pawn_pcsq[sq] and the value of a DARK
    pawn is pawn_pcsq[flip[sq]] */
-int flip[64] = {
+int flip[64] = { //position pièces noires
 	 56,  57,  58,  59,  60,  61,  62,  63,
 	 48,  49,  50,  51,  52,  53,  54,  55,
 	 40,  41,  42,  43,  44,  45,  46,  47,

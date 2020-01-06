@@ -1,0 +1,10 @@
+﻿  board.cpp
+  book.cpp
+u:\c echec\tscp_project\tscp_project\tscp_project\book.cpp(28): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  data.cpp
+  eval.cpp
+  main.cpp
+u:\c echec\tscp_project\tscp_project\tscp_project\main.cpp(29): warning C4244: 'return' : conversion de 'time_t' en 'int', perte possible de données
+  search.cpp
+  Génération de code en cours...
+  tscp_project.vcxproj -> U:\C Echec\tscp_project\tscp_project\Debug\tscp_project.exe

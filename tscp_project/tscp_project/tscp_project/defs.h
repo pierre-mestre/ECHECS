@@ -35,6 +35,61 @@
 #define F1				61
 #define G1				62
 #define H1				63
+
+#define A2				56
+#define B2				57
+#define C2				58
+#define D2				59
+#define E2				60
+#define F2				61
+#define G2				62
+#define H2				63
+
+#define A3				56
+#define B3				57
+#define C3				58
+#define D3				59
+#define E3				60
+#define F3				61
+#define G3				62
+#define H3				63
+
+#define A4				56
+#define B4				57
+#define C4				58
+#define D4				59
+#define E4				60
+#define F4				61
+#define G4				62
+#define H4				63
+
+#define A5				56
+#define B5				57
+#define C5				58
+#define D5				59
+#define E5				60
+#define F5				61
+#define G5				62
+#define H5				63
+
+#define A6				56
+#define B6				57
+#define C6				58
+#define D6				59
+#define E6				60
+#define F6				61
+#define G6				62
+#define H6				63
+
+#define A7				56
+#define B7				57
+#define C7				58
+#define D7				59
+#define E7				60
+#define F7				61
+#define G7				62
+#define H7				63
+
 #define A8				0
 #define B8				1
 #define C8				2

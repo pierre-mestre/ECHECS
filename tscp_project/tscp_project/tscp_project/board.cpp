@@ -11,11 +11,12 @@
 #include "data.h"
 #include "protos.h"
 
-int pospieceW[16] = { B1,B2,B3,B4,B5,B6,B7,B8,A1,A2,A3,A4,A5,A6,A7,A8 };
-int pospieceB[16] = { H1,H2,H3,H4,H5,H6,H7,H8,G1,G2,G3,G4,G5,G6,G7,G8 };
+int posIniPieceW[16] = { B1,B2,B3,B4,B5,B6,B7,B8,A1,A2,A3,A4,A5,A6,A7,A8 };
+int posIniPieceB[16] = { H1,H2,H3,H4,H5,H6,H7,H8,G1,G2,G3,G4,G5,G6,G7,G8 };
 int piece_dead = -1;
 /* init_board() sets the board to the initial game state. */
-
+	int posPieceW[16];
+	int posPieceB[16];
 void init_board()
 {
 	int i;
@@ -24,6 +25,8 @@ void init_board()
 		color[i] = init_color[i];
 		piece[i] = init_piece[i];
 	}
+	int posPieceW[16] = { B1,B2,B3,B4,B5,B6,B7,B8,A1,A2,A3,A4,A5,A6,A7,A8 };
+	int posPieceB[16] = { H1,H2,H3,H4,H5,H6,H7,H8,G1,G2,G3,G4,G5,G6,G7,G8 };
 	side = LIGHT;
 	xside = DARK;
 	castle = 15;

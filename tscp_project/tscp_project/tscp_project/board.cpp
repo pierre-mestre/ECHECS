@@ -21,12 +21,12 @@ int posIniPieceB[16] = { A7,B7,C7,D7,E7,F7,G7,H7,A8,H8,B8,G8,F8,C8,E8,D8 };
 void init_board()
 {
 	
-
+/*
 	for (int i = 0; i < 64; ++i) {
 		color[i] = init_color[i];
 		piece[i] = init_piece[i];
 	}
-	
+	*/
 	for (int i = 0; i < 16; i++) {
 		posPieceW[i] = posIniPieceW[i];
 	}
@@ -128,6 +128,44 @@ BOOL in_check(int s)
 
 BOOL attack(int sq, int s)
 {
+
+	int i, j, n;
+
+	for (i = 0; i < 16; ++i)
+		if (color[i] == s) {
+			if (i >= 0 && i<=7) {
+				if (s == LIGHT) {
+					if (COL(i) != 0 && i - 9 == sq)
+						return TRUE;
+					if (COL(i) != 7 && i - 7 == sq)
+						return TRUE;
+				}
+				else {
+					if (COL(i) != 0 && i + 7 == sq)
+						return TRUE;
+					if (COL(i) != 7 && i + 9 == sq)
+						return TRUE;
+				}
+			}
+			else
+				for (j = 0; j < offsets[piece[i]]; ++j)
+					for (n = i;;) {
+						n = mailbox[mailbox64[n] + offset[piece[i]][j]];
+						if (n == -1)
+							break;
+						if (n == sq)
+							return TRUE;
+						if (color[n] != EMPTY)
+							break;
+						if (!slide[piece[i]])
+							break;
+					}
+		}
+	return FALSE;
+	
+
+
+/* ORIGINAL
 	int i, j, n;
 
 	for (i = 0; i < 64; ++i)
@@ -161,6 +199,8 @@ BOOL attack(int sq, int s)
 					}
 		}
 	return FALSE;
+
+	*/
 }
 
 

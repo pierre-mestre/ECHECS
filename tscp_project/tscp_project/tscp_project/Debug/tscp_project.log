@@ -1,10 +1,1 @@
-﻿  board.cpp
-  book.cpp
-u:\c echec\tscp_project\tscp_project\tscp_project\book.cpp(28): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-  data.cpp
-  eval.cpp
-  main.cpp
-u:\c echec\tscp_project\tscp_project\tscp_project\main.cpp(29): warning C4244: 'return' : conversion de 'time_t' en 'int', perte possible de données
-  search.cpp
-  Génération de code en cours...
-  tscp_project.vcxproj -> U:\C Echec\tscp_project\tscp_project\Debug\tscp_project.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Platform.targets(67,5): error MSB8020: Les outils de génération pour v142 (ensemble d'outils de plateforme = 'v142') sont introuvables. Pour générer à l'aide des outils de génération v142, installez les outils de génération v142. Vous avez également la possibilité de mettre à niveau les outils Visual Studio actuels en sélectionnant le menu Projet ou en cliquant avec le bouton droit sur la solution, puis en sélectionnant "Recibler la solution".

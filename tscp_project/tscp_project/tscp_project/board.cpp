@@ -10,23 +10,30 @@
 #include "defs.h"
 #include "data.h"
 #include "protos.h"
+#define PIECE_DEAD (-1)
+// int posIniPieceMODEL[16] = { PION,PION,PION,PION,PION,PION,PION,PION,TOUR1,TOUR2,CAVALIER1,CAVALIER2,FOU1,FOU2,REINE,ROI };
+int posIniPieceW[16] = { A2,B2,C2,D2,E2,F2,G2,H2,A1,H1,B1,G1,F1,C1,E1,D1 };
+int posIniPieceB[16] = { A7,B7,C7,D7,E7,F7,G7,H7,A8,H8,B8,G8,F8,C8,E8,D8 };
 
-int posIniPieceW[16] = { B1,B2,B3,B4,B5,B6,B7,B8,A1,A2,A3,A4,A5,A6,A7,A8 };
-int posIniPieceB[16] = { H1,H2,H3,H4,H5,H6,H7,H8,G1,G2,G3,G4,G5,G6,G7,G8 };
-int piece_dead = -1;
 /* init_board() sets the board to the initial game state. */
 	int posPieceW[16];
 	int posPieceB[16];
 void init_board()
 {
-	int i;
+	
 
-	for (i = 0; i < 64; ++i) {
+	for (int i = 0; i < 64; ++i) {
 		color[i] = init_color[i];
 		piece[i] = init_piece[i];
 	}
-	int posPieceW[16] = { B1,B2,B3,B4,B5,B6,B7,B8,A1,A2,A3,A4,A5,A6,A7,A8 };
-	int posPieceB[16] = { H1,H2,H3,H4,H5,H6,H7,H8,G1,G2,G3,G4,G5,G6,G7,G8 };
+	
+	for (int i = 0; i < 16; i++) {
+		posPieceW[i] = posIniPieceW[i];
+	}
+	for (int i = 0; i < 16; i++) {
+		posPieceB[i] = posIniPieceB[i];
+	}
+
 	side = LIGHT;
 	xside = DARK;
 	castle = 15;

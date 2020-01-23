@@ -34,9 +34,6 @@ int get_ms()
    think() when it's the computer's turn to move or prompts
    the user for a command (and deciphers it). */
 
-
-
-
 int main()
 {
 	int computer_side;
@@ -53,9 +50,9 @@ int main()
 	init_hash();
 	initAttackTables();
 	init_board();
+
 	open_book();
 	gen();
-	
 	computer_side = EMPTY;
 	max_time = 1 << 25;
 	max_depth = 4;

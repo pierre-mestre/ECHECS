@@ -11,10 +11,7 @@
 #include "data.h"
 #include "protos.h"
 
-#define PIECE_DEAD (-1)
-// int posIniPieceMODEL[16] = { PION,PION,PION,PION,PION,PION,PION,PION,TOUR1,TOUR2,CAVALIER1,CAVALIER2,FOU1,FOU2,REINE,ROI };
-int posIniPieceW[16] = { A2,B2,C2,D2,E2,F2,G2,H2,A1,H1,B1,G1,F1,C1,E1,D1 };
-int posIniPieceB[16] = { A7,B7,C7,D7,E7,F7,G7,H7,A8,H8,B8,G8,F8,C8,E8,D8 };
+
 /* init_board() sets the board to the initial game state. */
 void initAttackTables()
 {
@@ -36,7 +33,7 @@ void initAttackTables()
 					if (n == -1){
 						break;
 					}
-					can_attack[p][i][j]=1;
+					can_attack[p][i][n]=1;
 					if (!slide[p]){
 						break;
 					}
@@ -45,8 +42,6 @@ void initAttackTables()
 		}
 	}
 }
-int posPieceW[16];
-	int posPieceB[16];
 void init_board()
 {
 	int i;
@@ -64,15 +59,6 @@ void init_board()
 	hply = 0;
 	set_hash();  /* init_hash() must be called before this function */
 	first_move[0] = 0;
-
-	for (int i = 0; i < 16; i++) {
-		posPieceW[i] = posIniPieceW[i];
-	}
-	for (int i = 0; i < 16; i++) {
-		posPieceB[i] = posIniPieceB[i];
-	}
-
-
 }
 
 
@@ -157,10 +143,9 @@ BOOL attack(int sq, int s)
 {
 	int i, j, n;
 
-
-	for (i = 0; i < 16; ++i)
+	for (i = 0; i < 64; ++i)
 		if (color[i] == s) {
-			if (i >= 0 && i<=7) {
+			if (piece[i] == PAWN) {
 				if (s == LIGHT) {
 					if (COL(i) != 0 && i - 9 == sq)
 						return TRUE;
@@ -174,21 +159,21 @@ BOOL attack(int sq, int s)
 						return TRUE;
 				}
 			}
-			else
-			if (can_attack[piece[i]][i][sq]==1){
-				for (j = 0; j < offsets[piece[i]]; ++j)
-					for (n = i;;) {
-						n = mailbox[mailbox64[n] + offset[piece[i]][j]];
-						if (n == -1)
-							break;
-						if (n == sq)
-							return TRUE;
-						if (color[n] != EMPTY)
-							break;
-						if (!slide[piece[i]])
-							break;
+			else if (can_attack[piece[i]][i][sq] == 1){
+					for (j = 0; j < offsets[piece[i]]; ++j){
+						for (n = i;;) {
+							n = mailbox[mailbox64[n] + offset[piece[i]][j]];
+							if (n == -1)
+								break;
+							if (n == sq)
+								return TRUE;
+							if (color[n] != EMPTY)
+								break;
+							if (!slide[piece[i]])
+								break;
+						}
 					}
-			}
+				}
 		}
 	return FALSE;
 }

@@ -15,20 +15,20 @@ extern int side;
 extern int xside;
 extern int castle;
 extern int ep;
-extern int fifty; // si 50 coups joués
+extern int fifty; // si 50 coups jouï¿½s
 extern int hash;
 extern int ply; // 
 extern int hply;
-extern gen_t gen_dat[GEN_STACK]; // coup a joué à une profondeur n
+extern gen_t gen_dat[GEN_STACK]; // coup a jouï¿½ ï¿½ une profondeur n
 extern int first_move[MAX_PLY];
-extern int history[64][64]; // méthode d'élagage
+extern int history[64][64]; // mï¿½thode d'ï¿½lagage
 extern hist_t hist_dat[HIST_STACK];
-extern int max_time; // temps alloué de réflexion
+extern int max_time; // temps allouï¿½ de rï¿½flexion
 extern int max_depth;
 extern int start_time;
 extern int stop_time;
 extern int nodes;
-extern move pv[MAX_PLY][MAX_PLY]; // stocke les coups sélectionnés
+extern move pv[MAX_PLY][MAX_PLY]; // stocke les coups sï¿½lectionnï¿½s
 extern int pv_length[MAX_PLY];
 extern BOOL follow_pv;
 extern int hash_piece[2][6][64];
@@ -43,3 +43,4 @@ extern int castle_mask[64];
 extern char piece_char[6];
 extern int init_color[64];
 extern int init_piece[64];
+int canAttack[6][64][64] ; // canAttack[TypeDePiece][Source][Destination]

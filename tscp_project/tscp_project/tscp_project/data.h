@@ -43,4 +43,4 @@ extern int castle_mask[64];
 extern char piece_char[6];
 extern int init_color[64];
 extern int init_piece[64];
-int canAttack[6][64][64] ; // canAttack[TypeDePiece][Source][Destination]
+extern int can_attack[6][64][64] ; // canAttack[TypeDePiece][Source][Destination]

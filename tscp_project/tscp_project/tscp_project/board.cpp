@@ -13,7 +13,35 @@
 
 
 /* init_board() sets the board to the initial game state. */
+void initAttackTables()
+{
+//memset( canAttack,1,sizeof(canAttack) ); // Pour test
 
+	for(int p =0;p<6;p++){
+		for (int i=0;i<64;i++){
+			for (int j=0; j<64;j++ ){
+				can_attack[p][i][j]=0;
+			}
+		}
+	}
+
+	for(int p =0;p<6;p++){
+		for (int i=0;i<64;i++){
+			for (int j = 0; j < offsets[p];j++){
+				for (int n = i;;) {
+					n = mailbox[mailbox64[n] + offset[p][j]];
+					if (n == -1){
+						break;
+					}
+					can_attack[p][i][j]=1;
+					if (!slide[p]){
+						break;
+					}
+				}
+			}
+		}
+	}
+}
 void init_board()
 {
 	int i;

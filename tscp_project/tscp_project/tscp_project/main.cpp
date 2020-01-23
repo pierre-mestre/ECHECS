@@ -33,10 +33,9 @@ int get_ms()
 /* main() is basically an infinite loop that either calls
    think() when it's the computer's turn to move or prompts
    the user for a command (and deciphers it). */
-void initAttackTables()
-{
-memset( canAttack,1,sizeof(canAttack) ); // Pour test
-}
+
+
+
 
 int main()
 {

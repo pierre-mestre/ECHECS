@@ -93,7 +93,7 @@ int search(int alpha, int beta, int depth)
 
 	/* do some housekeeping every 1024 nodes */
 	if ((nodes & 1023) == 0) // modulo 1024
-		checkup();			 // tous les 1024 effectue un checkup (vérifie que le temps de réflexion n'est pas dépassé
+		checkup();			 // tous les 1024 effectue un checkup (vï¿½rifie que le temps de rï¿½flexion n'est pas dï¿½passï¿½
 
 	pv_length[ply] = ply;
 

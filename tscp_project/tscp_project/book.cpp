@@ -5,6 +5,7 @@
  *	Copyright 1997 Tom Kerrigan
  */
 
+//coucou commentaire
 
 #include <stdio.h>
 #include <stdlib.h>

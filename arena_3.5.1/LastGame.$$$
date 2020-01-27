@@ -1,0 +1,53 @@
+[LastMove "30"]
+[Event "Computer chess game"]
+[Site "MYLENE-GAMER"]
+[Date "2020.01.27"]
+[Round "?"]
+[White "SOS 5.1 for Arena"]
+[Black "mylen"]
+[Result "*"]
+[BlackElo "2400"]
+[ECO "A00"]
+[Opening "Grob (Fric-Kilibr) Opening"]
+[Time "15:51:06"]
+[Variation "1...d5"]
+[WhiteElo "2000"]
+[TimeControl "300"]
+[Termination "unterminated"]
+[PlyCount "10"]
+[WhiteType "program"]
+[BlackType "human"]
+
+1. d4 (1. g4 d5 2. Bh3 e5 {(e7-e5 d2-d4 e5xd4 Qd1xd4
+Nb8-c6 Qd4-d3 Ng8-f6 f2-f3 h7-h5 g4-g5 Bc8xh3 Ng1xh3 Nc6-e5) +0.83/13 5} 3.
+Nf3 e4 {(e5-e4 Nf3-g1 Qd8-h4 Nb1-c3 c7-c6 d2-d3 Bf8-c5 e2-e3 Ng8-h6 Nc3-a4
+Bc5-b4+ c2-c3 Nh6xg4 d3xe4) +1.30/13 5} 4. Ne5 f6 {(f7-f6 Ne5-f3 e4xf3
+e2-e3 Nb8-c6 d2-d4 h7-h5 Qd1xf3 Qd8-d7 Bh3-g2 Nc6-b4 h2-h3 h5xg4 h3xg4
+Rh8xh1+ Bg2xh1) +3.18/14 6} 5. Nc6 (5. Ng6 hxg6 {(h7xg6 Bh3-g2 Bc8xg4 c2-c4
+c7-c6 Nb1-c3 Nb8-a6 c4xd5 c6xd5 f2-f3 e4xf3 e2xf3 Bg4-e6 d2-d4 Qd8-d7)
++4.64/15 5} 6. c4 Rxh3 {(Rh8xh3 Nb1-c3 d5xc4 Qd1-a4+ Qd8-d7 Qa4xc4 Ng8-e7
+Qc4xe4 Qd7xg4 Qe4xg4 Bc8xg4 d2-d4 Bg4-d7 Ra1-b1 c7-c6) +8.36/14 5} 7. cxd5
+Qxd5 {(Qd8xd5 Nb1-c3 Qd5-c6 Qd1-c2 Ng8-e7 Rh1-g1 Rh3xh2 Qc2xe4 Qc6xe4
+Nc3xe4 Bc8xg4 Ne4xf6+ g7xf6 Rg1xg4 Rh2-h1+ Rg4-g1 Rh1xg1+) +9.07/14 4} 8.
+Qa4+ Qc6 {(Qd5-c6 Qa4xc6+ Nb8xc6 g4-g5 Nc6-d4 Ke1-d1 Bc8-g4 Nb1-c3 f6-f5
+Ra1-b1 Bf8-b4 Kd1-e1 Ra8-d8 e2-e3 Nd4-c2+ Ke1-f1 Ng8-e7) +10.25/13 4} 9.
+Qxc6+ Nxc6 {(Nb8xc6 Nb1-c3 Nc6-d4 Ra1-b1 Bc8xg4 Rh1-g1 f6-f5 Rg1-g2 O-O-O
+a2-a3 Ng8-e7 b2-b4 Rh3xc3 d2xc3 Nd4-c2+ Ke1-f1 Rd8-d1+) +10.54/16 7} 10. d3
+exd3 {(e4xd3 e2xd3 Nc6-b4 Nb1-a3 Nb4xd3+ Ke1-f1 Bc8xg4 Na3-b5 O-O-O Nb5xa7+
+Kc8-b8 Rh1-g1 Bg4-f3 Na7-b5 Rh3xh2 Rg1xg6 Nd3xf2 Nb5xc7) +11.40/14 7} 11.
+Kd2 dxe2 {(d3xe2 Kd2xe2 Nc6-d4+ Ke2-d2 Bc8-e6 Nb1-c3 O-O-O Ra1-b1 Be6xg4
+Kd2-e1 Rh3xc3 b2xc3 Nd4-c2+ Ke1-f1 Bg4-f3 Bc1-g5 Bf3xh1) +13.96/14 9} 12.
+Kxe2 Nd4+ {(Nc6-d4+ Ke2-d2 Bc8-e6 Nb1-c3 O-O-O Ra1-b1 Be6xg4 Kd2-e1 Rh3xc3
+b2xc3 Nd4-c2+ Ke1-f1 Bg4-f3 Bc1-a3 Nc2xa3 Rb1-b3 Bf3xh1 Rb3xa3) +14.56/14
+6} 13. Ke1 Nc2+ {(Nd4-c2+ Ke1-f1 Bc8xg4 Rh1-g1 Bg4-f5 Nb1-c3 Nc2xa1 Bc1-f4
+O-O-O Nc3-b5 Rh3-d3 Nb5xa7+ Kc8-b8 Na7-b5 Rd3-d1+ Kf1-g2 Bf5-e4+ f2-f3
+Be4xf3+ Kg2-f2) +16.87/14 5} 14. ... {0-1 White forfeits on time} Nxe1) 5.
+.. Nxc6 {(Nb8xc6 c2-c4 d5-d4 Bh3-g2 Qd8-e7 O-O Bc8xg4 f2-f3 Bg4-f5 f3xe4
+Bf5xe4 Rf1-f4 Be4xg2 Kg1xg2) +4.46/14 5}) 1. .. f5 2. Nd2 Nf6 {(Ng8-f6
+Ng1-f3 e7-e6 e2-e3 Bf8-e7 Bf1-d3 Nb8-c6 O-O O-O Nd2-c4 Nf6-e4 Nc4-e5 Nc6xe5
+Nf3xe5 d7-d6) -0.14/15 4} 3. f3 e6 {(e7-e6 e2-e4 Nb8-c6 c2-c3 f5xe4 Nd2xe4
+Nf6xe4 f3xe4 Qd8-h4+ Ke1-d2) +0.36/14 7} 4. g4 Nxg4 {(Nf6xg4 Nd2-e4 Qd8-h4+
+Ke1-d2 Ng4xh2 Kd2-c3 f5xe4 f3xe4 Qh4-g3+ Ng1-f3 Nh2xf3 e2xf3 Nb8-c6 a2-a3
+a7-a5) +5.69/14 4} 5. fxg4 (5. Nh3 Qh4+ {(Qd8-h4+ Nh3-f2 Qh4xf2+) +M2/26
+4}) 5. .. Qh4# {(Qd8-h4+) +M1/30 4} *
+

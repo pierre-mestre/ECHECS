@@ -82,6 +82,7 @@ typedef struct {
 	int score;
 } gen_t;
 
+typedef unsigned long HTTyp;
 /* an element of the history stack, with the information
    necessary to take a move back. */
 typedef struct {
@@ -90,9 +91,8 @@ typedef struct {
 	int castle;
 	int ep;
 	int fifty;
-	int hash;
+	HTTyp hash;
 } hist_t;
-typedef unsigned long HTTyp;
 
 #define USE_HASH
 #define MAX_HASH_DEPTH 200
@@ -126,3 +126,10 @@ typedef struct
 	unsigned char flag;     // indique si le score est vrai, inferieur ou superieur
 	unsigned char depth;    // le nombre de coup avant la quiescence.
 } HtTyp;
+
+typedef struct
+{
+	HTTyp hash;
+	short score;
+	unsigned char depth;
+} HtLearning;

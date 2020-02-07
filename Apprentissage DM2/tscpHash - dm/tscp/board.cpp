@@ -11,11 +11,19 @@
 #include "defs.h"
 #include "data.h"
 #include "protos.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+#define HASH_SIZE 10000
+#define BLOCK_SIZE 24
+#define BLOCK_COUNT 10
+
+
 
 static int initAl = 1;
 static unsigned long y[55];
 static int j, k;
-
+HtLearning hash_learn[HASH_SIZE];
 unsigned long x[55] = {
 1410651636UL, 3012776752UL, 3497475623UL, 2892145026UL, 1571949714UL,
 3253082284UL, 3489895018UL,  387949491UL, 2597396737UL, 1981903553UL,
@@ -654,29 +662,34 @@ void initHT()
 	memset(HT, 0, sizeof(HT));
 }
 
-typedef struct
-{
-	HTTyp hash;
-	short score;
-	unsigned char depth; // profondeur de la recherche
-} HtLearning;
-
-HtLearning hash_learn[10000];
 
 void learn(int depth, int eval) {
-	HtLearning* p_hash_learn = &hash_learn[hash % 9999];
+	HtLearning* p_hash_learn = &hash_learn[hash % (HASH_SIZE - 1)];
 	if (p_hash_learn->depth <= depth) {
 		p_hash_learn->hash = hash;
 		p_hash_learn->score = eval;
 		p_hash_learn->depth = depth;
+		ecriture();
 	}
 }
 
 
 HtLearning* getLearn() {
-	HtLearning* p_hash_learn = &hash_learn[hash % 9999];
+	HtLearning* p_hash_learn = &hash_learn[hash % (HASH_SIZE - 1)];
 	if (p_hash_learn->hash == hash) {
 		return p_hash_learn;
 	}
 	return NULL;
 }
+
+
+void ecriture() {
+
+
+	FILE* fichier = fopen("APPRENTISSAGE.txt", "w");
+	if (fichier)
+	{
+		fwrite(hash_learn, sizeof(hash_learn), 1, fichier);
+		fclose(fichier);
+	}
+}	

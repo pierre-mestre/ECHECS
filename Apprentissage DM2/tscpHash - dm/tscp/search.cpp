@@ -11,6 +11,8 @@
 #include "defs.h"
 #include "data.h"
 #include "protos.h"
+#include <stdio.h>
+
 
 
 /* see the beginning of think() */
@@ -24,7 +26,35 @@ BOOL stop_search;
    0 = no output
    1 = normal output
    2 = xboard format output */
+int score = 0;
+int lastScore = NULL;
 
+int depth = 0;
+void checkLearning() // Fonction vérifiant si le score a chuté et si on doit apprendre ou pas le score de la position « P »
+
+{
+	int delta = lastScore - score;
+	if (delta >= 100) // C’est mieux d’utiliser hist_dat…
+
+	{
+
+		// On revient à la position précédente "p"
+		takeback();
+		learn(depth, -score);
+		makemove(hist_dat[hply].m.b);
+
+		printf("\nCHUTE DE SCORE\n");
+		printf("lastPlayeScore=%d, previous score = %d", lastScore, score);
+		printf("Oops...");
+
+
+
+		//…;
+
+	}
+
+
+}
 void think(int output)
 {
 	int i, j, x;
@@ -43,6 +73,8 @@ void think(int output)
 		/* make sure to take back the line we were searching */
 		while (ply)
 			takeback();
+		depth = i;
+		checkLearning();
 		return;
 	}
 
@@ -60,9 +92,13 @@ void think(int output)
 	int alpha, beta;
 	alpha = -10000;
 	beta = 10000;
+	
 	for (i = 1; i <= max_depth; ++i) {
+		
 		follow_pv = TRUE;
 		x = search(alpha, beta, i);
+	//	printf("le score est: %d\n", x);
+		
 		if (output == 1)
 			printf("%3d  %9lld  %5d %10.3f", i, nodes, x, (float)(get_ms() - start_time)/1000.0);
 		else if (output == 2)
@@ -74,11 +110,26 @@ void think(int output)
 			printf("\n");
 			fflush(stdout);
 		}
+	
 		if (x > 9000 || x < -9000)
 			break;
 		//alpha = x - 100;
 		//beta = x + 100;
 	}
+
+	score = x;
+	
+	if (lastScore != NULL) {
+		depth = i;
+		checkLearning();
+		lastScore = x;
+		//printf("SCORE: %d\n", score);
+	}
+	else {
+		lastScore = x;
+		printf("SCORE: %d\n", lastScore);
+	}
+
 }
 
 
@@ -118,6 +169,16 @@ int search(int alpha, int beta, int depth)
 	c = in_check(side);
 	if (c)
 		++depth;
+#if 1
+	HtLearning *pTransLearning = getLearn();
+	if (pTransLearning && pTransLearning->depth>=depth)
+	{
+		int pTranspEval = pTransLearning->score;
+		UNSCALE_MATE_VALUE(pTranspEval);
+		pv_length[ply] = ply;
+		return pTranspEval;
+	}
+#endif
 #ifdef USE_HASH
 	move transpositionMove;
 	transpositionMove.u= 0;
@@ -245,7 +306,16 @@ int quiesce(int alpha,int beta)
 		return eval();
 	if (hply >= HIST_STACK - 1)
 		return eval();
-
+#if 1
+	HtLearning *pTransLearning = getLearn();
+	if (pTransLearning && pTransLearning->depth >= depth)
+	{
+		int pTranspEval = pTransLearning->score;
+		UNSCALE_MATE_VALUE(pTranspEval);
+		pv_length[ply] = ply;
+		return pTranspEval;
+	}
+#endif
 #ifdef USE_HASH
 	HtTyp *pTransp = getTT();
 	if (pTransp)
@@ -286,6 +356,7 @@ int quiesce(int alpha,int beta)
 		}
 	}
 #endif
+
 	/* check with the evaluation function */
 	x = eval();
 	if (x >= beta)

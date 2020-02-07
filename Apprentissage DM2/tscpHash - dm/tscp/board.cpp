@@ -686,10 +686,22 @@ HtLearning* getLearn() {
 void ecriture() {
 
 
-	FILE* fichier = fopen("APPRENTISSAGE.txt", "w");
+	FILE* fichier = fopen("APPRENTISSAGEs.txt", "w");
 	if (fichier)
 	{
 		fwrite(hash_learn, sizeof(hash_learn), 1, fichier);
 		fclose(fichier);
 	}
 }	
+void lecture() 
+{
+	FILE* fichier = fopen("APPRENTISSAGEs.txt", "r");
+	if (fichier)
+	{
+		fread(hash_learn, sizeof(hash_learn), 1, fichier);
+		fclose(fichier);
+	}
+	else
+		memset(hash_learn,0, sizeof(hash_learn));
+}
+

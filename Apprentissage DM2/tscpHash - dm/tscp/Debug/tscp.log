@@ -1,8 +1,5 @@
 ﻿  board.cpp
-  book.cpp
-d:\travail\tscp\tscp\book.cpp(28): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-  data.cpp
-  eval.cpp
-  search.cpp
-  Génération de code en cours...
-  tscp.vcxproj -> D:\travail\tscp\Debug\tscp.exe
+c:\users\mestrep\desktop\echecs\apprentissage dm2\tscphash - dm\tscp\board.cpp(104): warning C4244: '=' : conversion de 'unsigned __int64' en 'HTTyp', perte possible de données
+c:\users\mestrep\desktop\echecs\apprentissage dm2\tscphash - dm\tscp\board.cpp(105): warning C4244: '=' : conversion de 'unsigned __int64' en 'HTTyp', perte possible de données
+c:\users\mestrep\desktop\echecs\apprentissage dm2\tscphash - dm\tscp\board.cpp(107): warning C4244: '=' : conversion de 'unsigned __int64' en 'HTTyp', perte possible de données
+  tscp.vcxproj -> C:\Users\mestrep\Desktop\ECHECS\Apprentissage DM2\tscpHash - dm\Debug\tscp.exe

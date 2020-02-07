@@ -27,6 +27,7 @@ BOOL makemove(move_bytes m);
 void takeback();
 void initHT();
 void ecriture();
+void lecture();
 HtLearning* getLearn();
 
 /* book.c */

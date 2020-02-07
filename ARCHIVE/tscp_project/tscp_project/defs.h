@@ -44,6 +44,11 @@
 #define G8				6
 #define H8				7
 
+/* CORRECTION
+enum square
+{ A8, B8, ...
+};*/
+
 #define ROW(x)			(x >> 3)
 #define COL(x)			(x & 7)
 
@@ -87,6 +92,10 @@ typedef struct {
 typedef struct {
 	move m;
 	int capture;
+    /* CORRECTION pour takeback
+    int captureBoard;
+    int capture ...
+    */
 	int castle;
 	int ep;
 	int fifty;
